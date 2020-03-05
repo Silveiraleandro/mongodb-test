@@ -1,0 +1,1 @@
+FROMgitpod/workspace-mongodb
