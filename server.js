@@ -6,11 +6,13 @@ bodyParser = require("body-parser");
 mongoose = require( 'mongoose');
 var app = express();
 var port = 3000;
+var userCtrl = require('./user-controller');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(require('./routes'));
 
+app.get('/users', userCtrl.createUser);
 app.get('/hello/:foo/:bar', function (req, res) {
     res.json({result: "Hello CCT!", data: [
         req.params.foo,
